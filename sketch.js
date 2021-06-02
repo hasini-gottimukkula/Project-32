@@ -1,7 +1,7 @@
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
-
+const Constraint = Matter.Constraint;
 
 var ground;
 
@@ -14,30 +14,30 @@ function setup() {
   ground = new Ground(600, 600, 1200, 20);
 
 
-  carton1 = new Box(900, 100, 70, 70);
-  carton2 = new Box(900, 100, 70, 70);
-  carton3 = new Box(900, 100, 70, 70);
-  carton4 = new Box(900, 100, 70, 70);
-  carton5 = new Box(900, 100, 70, 70);
-  carton6 = new Box(900, 100, 70, 70);
-  carton7 = new Box(800, 100, 70, 70);
-  carton8 = new Box(800, 100, 70, 70);
-  carton9 = new Box(800, 100, 70, 70);
-  carton10 = new Box(800, 100, 70, 70);
-  carton11 = new Box(800, 100, 70, 70);
-  carton12 = new Box(800, 100, 70, 70);
-  carton13 = new Box(700, 100, 70, 70);
-  carton14 = new Box(700, 100, 70, 70);
-  carton15 = new Box(700, 100, 70, 70);
-  carton16 = new Box(700, 100, 70, 70);
-  carton17 = new Box(700, 100, 70, 70);
-  carton18 = new Box(700, 100, 70, 70);
-  carton19 = new Box(700, 100, 70, 70);
-  carton20 = new Box(700, 100, 70, 70);
+  carton1 = new Carton(900, 100, 70, 70);
+  carton2 = new Carton(900, 100, 70, 70);
+  carton3 = new Carton(900, 100, 70, 70);
+  carton4 = new Carton(900, 100, 70, 70);
+  carton5 = new Carton(900, 100, 70, 70);
+  carton6 = new Carton(900, 100, 70, 70);
+  carton7 = new Carton(800, 100, 70, 70);
+  carton8 = new Carton(800, 100, 70, 70);
+  carton9 = new Carton(800, 100, 70, 70);
+  carton10 = new Carton(800, 100, 70, 70);
+  carton11 = new Carton(800, 100, 70, 70);
+  carton12 = new Carton(800, 100, 70, 70);
+  carton13 = new Carton(700, 100, 70, 70);
+  carton14 = new Carton(700, 100, 70, 70);
+  carton15 = new Carton(700, 100, 70, 70);
+  carton16 = new Carton(700, 100, 70, 70);
+  carton17 = new Carton(700, 100, 70, 70);
+  carton18 = new Carton(700, 100, 70, 70);
+  carton19 = new Carton(700, 100, 70, 70);
+  carton20 = new Carton(700, 100, 70, 70);
 
-  ball = new Ball(200, 200, 80, 80);
+  ball = new Ball(200, 200, 80);
 
-  slingshot = new SlingShot(ball.body, { x: 500, y: 50 });
+  slingshot = new Slingshot(ball.body, { x: 500, y: 50 });
 
 
 }
@@ -69,7 +69,7 @@ function draw() {
   carton20.display();
 
   ball.display();
-  sling.display();
+  slingshot.display();
 
 
   drawSprites();

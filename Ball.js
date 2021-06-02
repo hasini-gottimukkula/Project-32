@@ -1,12 +1,12 @@
 class Ball {
-    constructor(x, y) {
+    constructor(x, y, radius) {
         var options = {
             frictionAir: 0.005,
             density: 1
 
         }
 
-        this.body = Bodies.rect(x, y, options);
+        this.body = Bodies.circle(x, y, radius, options);
         this.radius = radius;
         World.add(world, this.body);
     }
